@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rules import views as views_1
+from catalog import views as views_2
+from articles import views as articles
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('articles/2023/', articles.article_2023, name='article_2023'),
+    path('rules/', views_1.rules, name='rules'),
+    path('catalog/', views_2.catalog, name='catalog'),
+    path('', views_1.index, name='index')
 ]
